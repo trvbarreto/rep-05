@@ -42,8 +42,8 @@ const display = document.querySelector('.display');
 
 for (const button of buttons) {
     button.addEventListener('click', () => {
-        display.innerText = button.innerText;
-        displayValue = button.innerText;
+        display.innerText += button.innerText;
+        displayValue = display.innerText;
         console.log(displayValue);
     })
 };
