@@ -14,20 +14,29 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
+function operate(operator, num1, num2) {
+    
+    switch (operator) {
+        case '+':
+            return add(num1, num2);
+            break;
+        case '-':
+            return subtract(num1, num2);
+            break;
+        case '*':
+            return multiply(num1, num2);
+            break;
+        case '/':
+            return divide(num1, num2);
+            break;
+    
+        default:
+            break;
+    }
+}
+
 // Tests
-console.log(add(1, 2));
-console.log(add(-1, -3));
-console.log(add("3", 3));
-console.log(add("teste", 4));
-
-console.log(subtract(1, 2));
-console.log(subtract(-1, -4));
-console.log(subtract("teste", 4));
-
-console.log(multiply(3, 2));
-console.log(multiply(-1, -4));
-console.log(multiply("teste", 4));
-
-console.log(divide(3, 2));
-console.log(divide(-1, -4));
-console.log(divide("teste", 4));
+console.log(operate('+', 24, 4));
+console.log(operate('-', 4, 24));
+console.log(operate('*', 24, 4));
+console.log(operate('/', 24, 4));
