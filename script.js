@@ -37,7 +37,7 @@ function operate(operator, num1, num2) {
 
 let displayValue;
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelector('.numbers').childNodes;
 const display = document.querySelector('.display');
 
 for (const button of buttons) {
