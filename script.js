@@ -15,7 +15,7 @@ function divide(num1, num2) {
 }
 
 function operate(operator, num1, num2) {
-    
+
     switch (operator) {
         case '+':
             return add(num1, num2);
@@ -34,6 +34,19 @@ function operate(operator, num1, num2) {
             break;
     }
 }
+
+let displayValue;
+
+const buttons = document.querySelectorAll('button');
+const display = document.querySelector('.display');
+
+for (const button of buttons) {
+    button.addEventListener('click', () => {
+        display.innerText = button.innerText;
+        displayValue = button.innerText;
+        console.log(displayValue);
+    })
+};
 
 // Tests
 console.log(operate('+', 24, 4));
