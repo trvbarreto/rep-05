@@ -15,21 +15,25 @@ body {
 }
 
 div.calculator {
-    width: 250px;
+    width: 260px;
     background-color: #17181A;
     color: #ffffff;
     border-radius: 20px;
     padding: 20px;
 }
 
+div.display {
+    height: 100px;
+}
+
 div.numbers {
-    width: 200px;
+    width: 160px;
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
 }
 
-.numbers > button {
+button {
     border: none;
     outline: none;
     padding: 10px 15px;
