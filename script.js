@@ -47,9 +47,3 @@ for (const button of buttons) {
         console.log(displayValue);
     })
 };
-
-// Tests
-console.log(operate('+', 24, 4));
-console.log(operate('-', 4, 24));
-console.log(operate('*', 24, 4));
-console.log(operate('/', 24, 4));
