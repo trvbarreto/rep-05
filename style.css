@@ -6,12 +6,23 @@
 
 body {
     height: 100vh;
+    background-color: #17181A;
+    
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+}
+
+div.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background-color: #109DFF;
+
+    height: 800px;
+    width: 800px;
+    border-radius: 50%;
 }
 
 div.calculator {
