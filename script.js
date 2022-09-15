@@ -1,20 +1,20 @@
 function add(num1, num2) {
-    return num1 + num2;
+    return (num1 + num2).toFixed(2);
 };
 
 function subtract(num1, num2) {
-    return (num1 < num2 ? num2 - num1 : num1 - num2);
+    return (num1 < num2 ? num2 - num1 : num1 - num2).toFixed(2);
 };
 
 function multiply(num1, num2) {
-    return num1 * num2;
+    return (num1 * num2).toFixed(2);
 }
 
 function divide(num1, num2) {
     if (num2 == 0) {
         return 'It\'s not possible to divide by zero.'
     } else {
-        return num1 / num2;
+        return (num1 / num2).toFixed(2);
     }    
 }
 
