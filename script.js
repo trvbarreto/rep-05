@@ -1,20 +1,20 @@
 function add(num1, num2) {
-    return (num1 + num2).toFixed(2);
+    return parseInt((num1 + num2).toFixed(2));
 };
 
 function subtract(num1, num2) {
-    return (num1 < num2 ? num2 - num1 : num1 - num2).toFixed(2);
+    return parseInt((num1 < num2 ? num2 - num1 : num1 - num2).toFixed(2));
 };
 
 function multiply(num1, num2) {
-    return (num1 * num2).toFixed(2);
+    return parseInt((num1 * num2).toFixed(2));
 }
 
 function divide(num1, num2) {
     if (num2 == 0) {
-        return 'It\'s not possible to divide by zero.'
+        return 'Division by zero.'
     } else {
-        return (num1 / num2).toFixed(2);
+        return parseInt((num1 / num2).toFixed(2));
     }    
 }
 
@@ -45,12 +45,13 @@ let operator;
 
 const numberBtns = document.querySelector('.numbers').childNodes;
 const operatorBtns = document.querySelector('.operators').childNodes;
-const display = document.querySelector('.display');
+const topDisplay = document.querySelector('.topDisplay');
+const bottomDisplay = document.querySelector('.bottomDisplay');
 
 for (const button of numberBtns) {
     button.addEventListener('click', () => {
-        display.innerText += button.innerText;
-        displayNumber = display.innerText;
+        bottomDisplay.innerText += button.innerText;
+        displayNumber = parseInt(bottomDisplay.innerText);
         console.log(displayNumber);
     })
 };
@@ -58,11 +59,30 @@ for (const button of numberBtns) {
 for (const button of operatorBtns) {
     button.addEventListener('click', () => {
         if (firstNumber === undefined) {
+
             firstNumber = displayNumber;
             operator = button.innerText;
-            console.log(firstNumber, operator);
+            displayNumber = 0;
+
+            topDisplay.innerText = `${firstNumber} ${operator}`;
+            bottomDisplay.innerText = '';
         } else {
+            let result = operate(operator, firstNumber, displayNumber);
+
+            firstNumber = result;
             
+            displayNumber = 0;
+            operator = button.innerText;
+
+            if (typeof(firstNumber) == 'string') {
+                topDisplay.innerText = `${firstNumber}`;
+                firstNumber = undefined;
+                displayNumber = undefined;
+            } else {
+                topDisplay.innerText = `${firstNumber} ${operator}`;            
+            }
+
+            bottomDisplay.innerText = '';
         }
     })
 };
