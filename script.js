@@ -39,18 +39,31 @@ function operate(operator, num1, num2) {
     }
 }
 
-let displayValue;
+let displayNumber;
+let firstNumber;
+let operator;
 
 const numberBtns = document.querySelector('.numbers').childNodes;
+const operatorBtns = document.querySelector('.operators').childNodes;
 const display = document.querySelector('.display');
-
-
 
 for (const button of numberBtns) {
     button.addEventListener('click', () => {
         display.innerText += button.innerText;
-        displayValue = display.innerText;
-        console.log(displayValue);
+        displayNumber = display.innerText;
+        console.log(displayNumber);
+    })
+};
+
+for (const button of operatorBtns) {
+    button.addEventListener('click', () => {
+        if (firstNumber === undefined) {
+            firstNumber = displayNumber;
+            operator = button.innerText;
+            console.log(firstNumber, operator);
+        } else {
+            
+        }
     })
 };
 
