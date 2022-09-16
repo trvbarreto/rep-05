@@ -35,6 +35,17 @@ div.calculator {
 
 div.display {
     height: 100px;
+    text-align: right;
+}
+
+div.topDisplay {
+    height: 40%;
+    font-size: 1.5rem;
+}
+
+div.bottomDisplay {
+    height: 60%;
+    font-size: 2rem;
 }
 
 div.numbers {
