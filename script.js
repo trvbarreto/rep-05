@@ -1,20 +1,20 @@
 function add(num1, num2) {
-    return parseInt((num1 + num2).toFixed(2));
+    return parseFloat((num1 + num2).toFixed(2));
 };
 
 function subtract(num1, num2) {
-    return parseInt((num1 < num2 ? num2 - num1 : num1 - num2).toFixed(2));
+    return parseFloat((num1 - num2).toFixed(2));
 };
 
 function multiply(num1, num2) {
-    return parseInt((num1 * num2).toFixed(2));
+    return parseFloat((num1 * num2).toFixed(2));
 }
 
 function divide(num1, num2) {
     if (num2 == 0) {
         return 'Division by zero.'
     } else {
-        return parseInt((num1 / num2).toFixed(2));
+        return parseFloat((num1 / num2).toFixed(2));
     }    
 }
 
@@ -88,9 +88,9 @@ for (const button of operatorBtns) {
 
 /* PSEUDO CODE
 
-    *VALOR DEFAULT DO DISPLAY SEMPRE TEM QUE SER ZERO
-    **CORRIGIR FUNÇÃO OPERATE PRA SEMPRE ARREDONDAR O RESULTADO PRA DUAS CASAS DECIMAIS
-    ***CORRIGIR DIVISION BY ZERO NA FUNCAO DIVIDE
+    [X] *VALOR DEFAULT DO DISPLAY SEMPRE TEM QUE SER ZERO
+    [X] **CORRIGIR FUNÇÃO OPERATE PRA SEMPRE ARREDONDAR O RESULTADO PRA DUAS CASAS DECIMAIS
+    [X] ***CORRIGIR DIVISION BY ZERO NA FUNCAO DIVIDE
 
     QUANDO USER CLICAR NO BOTÃO DE OPERADOR
         SE TIVER ALGUM NUMERO SALVO NA PRIMEIRA VARIAVEL
