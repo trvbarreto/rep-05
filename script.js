@@ -52,7 +52,6 @@ for (const button of numberBtns) {
     button.addEventListener('click', () => {
         bottomDisplay.innerText += button.innerText;
         displayNumber = parseInt(bottomDisplay.innerText);
-        console.log(displayNumber);
     })
 };
 
@@ -77,7 +76,7 @@ for (const button of operatorBtns) {
             if (typeof(firstNumber) == 'string') {
                 topDisplay.innerText = `${firstNumber}`;
                 firstNumber = undefined;
-                displayNumber = undefined;
+                displayNumber = 0;
             } else {
                 topDisplay.innerText = `${firstNumber} ${operator}`;            
             }
