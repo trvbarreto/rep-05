@@ -41,10 +41,12 @@ function operate(operator, num1, num2) {
 
 let displayValue;
 
-const buttons = document.querySelector('.numbers').childNodes;
+const numberBtns = document.querySelector('.numbers').childNodes;
 const display = document.querySelector('.display');
 
-for (const button of buttons) {
+
+
+for (const button of numberBtns) {
     button.addEventListener('click', () => {
         display.innerText += button.innerText;
         displayValue = display.innerText;
