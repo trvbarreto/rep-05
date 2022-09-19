@@ -47,6 +47,7 @@ const numberBtns = document.querySelector('.numbers').childNodes;
 const operatorBtns = document.querySelector('.operators').childNodes;
 const topDisplay = document.querySelector('.topDisplay');
 const bottomDisplay = document.querySelector('.bottomDisplay');
+const equalsButton = document.querySelector('#equals');
 
 for (const button of numberBtns) {
     button.addEventListener('click', () => {
@@ -86,6 +87,14 @@ for (const button of operatorBtns) {
     })
 };
 
+equalsButton.addEventListener('click', () => {
+    if (firstNumber !== undefined) {
+        let result = operate(operator, firstNumber, displayNumber);
+        bottomDisplay.innerText = result;
+        topDisplay.innerText = '';
+    };
+});
+
 /* PSEUDO CODE
 
     [X] *VALOR DEFAULT DO DISPLAY SEMPRE TEM QUE SER ZERO
@@ -102,7 +111,7 @@ for (const button of operatorBtns) {
             SALVAR O OPERADOR EM UMA VARIAVEL
             MOSTRAR O PRIMEIRO NUMERO E O OPERADOR NO TOP DO DISPLAY
     
-    QUANDO USER CLICAR NO BOTÃO DE =
+    [X] QUANDO USER CLICAR NO BOTÃO DE =
         SALVAR O NUMERO DO DISPLAY EM OUTRA VARIAVEL
         EXECUTAR A FUNÇÃO OPERATE COM O PRIMEIRO NUMERO SALVO, O OPERADOR SALVO E O NUMERO ATUAL DO DISPLAY
         LIMPAR O DISPLAY
