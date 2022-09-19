@@ -48,6 +48,7 @@ const operatorBtns = document.querySelector('.operators').childNodes;
 const topDisplay = document.querySelector('.topDisplay');
 const bottomDisplay = document.querySelector('.bottomDisplay');
 const equalsButton = document.querySelector('#equals');
+const clearButton = document.querySelector('#clear');
 
 for (const button of numberBtns) {
     button.addEventListener('click', () => {
@@ -95,13 +96,22 @@ equalsButton.addEventListener('click', () => {
     };
 });
 
+clearButton.addEventListener('click', () => {
+    displayNumber = 0;
+    firstNumber = undefined;
+    operator = undefined;
+
+    bottomDisplay.innerText = '';
+    topDisplay.innerText = '';
+});
+
 /* PSEUDO CODE
 
     [X] *VALOR DEFAULT DO DISPLAY SEMPRE TEM QUE SER ZERO
     [X] **CORRIGIR FUNÇÃO OPERATE PRA SEMPRE ARREDONDAR O RESULTADO PRA DUAS CASAS DECIMAIS
     [X] ***CORRIGIR DIVISION BY ZERO NA FUNCAO DIVIDE
 
-    QUANDO USER CLICAR NO BOTÃO DE OPERADOR
+    [x] QUANDO USER CLICAR NO BOTÃO DE OPERADOR
         SE TIVER ALGUM NUMERO SALVO NA PRIMEIRA VARIAVEL
             EXECUTAR OPERATE EM CIMA DOS VALORES ATUAIS
             SUBSTITUIR O VALOR DA PRIMEIRA VARIAVEL PELO RESULTADO DE OPERATE
@@ -117,7 +127,7 @@ equalsButton.addEventListener('click', () => {
         LIMPAR O DISPLAY
         INSERIR O RESULTADO DE OPERATE NO DISPLAY
 
-    QUANDO CLICAR NO BOTÃO CLEAR
+    [X] QUANDO CLICAR NO BOTÃO CLEAR
         TODAS AS VARIAVEIS DEVEM SER LIMPAS
         O DISPLAY DEVE SER LIMPO        
 */
