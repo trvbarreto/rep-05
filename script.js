@@ -1,3 +1,17 @@
+// DOM Variables
+const numberBtns = document.querySelector('.numbers').childNodes;
+const operatorBtns = document.querySelector('.operators').childNodes;
+const topDisplay = document.querySelector('.topDisplay');
+const bottomDisplay = document.querySelector('.bottomDisplay');
+const equalsButton = document.querySelector('#equals');
+const clearButton = document.querySelector('#clear');
+
+// Program Variables
+let displayNumber;
+let firstNumber;
+let operator;
+
+// Operations Functions
 function add(num1, num2) {
     return parseFloat((num1 + num2).toFixed(2));
 };
@@ -39,17 +53,7 @@ function operate(operator, num1, num2) {
     }
 }
 
-let displayNumber;
-let firstNumber;
-let operator;
-
-const numberBtns = document.querySelector('.numbers').childNodes;
-const operatorBtns = document.querySelector('.operators').childNodes;
-const topDisplay = document.querySelector('.topDisplay');
-const bottomDisplay = document.querySelector('.bottomDisplay');
-const equalsButton = document.querySelector('#equals');
-const clearButton = document.querySelector('#clear');
-
+// Buttons actions
 for (const button of numberBtns) {
     button.addEventListener('click', () => {
         bottomDisplay.innerText += button.innerText;
