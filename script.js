@@ -5,6 +5,7 @@ const topDisplay = document.querySelector('.topDisplay');
 const bottomDisplay = document.querySelector('.bottomDisplay');
 const equalsButton = document.querySelector('#equals');
 const clearButton = document.querySelector('#clear');
+const backspaceButton = document.querySelector('#backspace');
 
 // Program Variables
 let displayNumber;
@@ -107,6 +108,21 @@ clearButton.addEventListener('click', () => {
 
     bottomDisplay.innerText = '';
     topDisplay.innerText = '';
+});
+
+backspaceButton.addEventListener('click', () => {
+    let numStr = displayNumber.toString();
+
+    if (numStr.length === 1) {
+        displayNumber = 0;
+    } else {        
+        numStr = numStr.split('');
+        numStr.pop();
+        numStr = numStr.join('');
+        displayNumber = parseFloat(numStr);
+    }  
+
+    bottomDisplay.innerText = displayNumber;    
 });
 
 /* EXTRA
