@@ -97,6 +97,8 @@ equalsButton.addEventListener('click', () => {
     if (firstNumber !== undefined) {
         let result = operate(operator, firstNumber, displayNumber);
         bottomDisplay.innerText = result;
+        displayNumber = result;
+        firstNumber = undefined;
         topDisplay.innerText = '';
     };
 });
@@ -115,14 +117,14 @@ backspaceButton.addEventListener('click', () => {
 
     if (numStr.length === 1) {
         displayNumber = 0;
+        bottomDisplay.innerText = '';
     } else {        
         numStr = numStr.split('');
         numStr.pop();
         numStr = numStr.join('');
         displayNumber = parseFloat(numStr);
-    }  
-
-    bottomDisplay.innerText = displayNumber;    
+        bottomDisplay.innerText = displayNumber;
+    }         
 });
 
 /* EXTRA
