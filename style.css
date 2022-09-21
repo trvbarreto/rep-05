@@ -72,3 +72,18 @@ div.operators {
     display: flex;
     justify-content: space-between;
 }
+
+div.operators > button {
+    background-color: #005DB2;
+}
+
+button#equals {
+    background-color: #1991FF;
+    color: #B2DAFF;
+}
+
+button#clear,
+button#backspace {
+    background-color: #616161;
+    color: #A5A5A5;
+}
