@@ -58,7 +58,8 @@ div.numbers {
 button {
     border: none;
     outline: none;
-    padding: 10px 15px;
+    width: 3rem;
+    height: 3rem;
     border-radius: 10px;
 
     font-size: 20px;
@@ -66,8 +67,6 @@ button {
 
     background-color: #303136;
     color: #29A8FF;
-}
 
-#zero {
-    padding: 10px 42px;
+    text-align: center;
 }
