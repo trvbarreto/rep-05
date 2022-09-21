@@ -68,6 +68,22 @@ button {
     text-align: center;
 }
 
+button#equals {
+    background-color: #1991FF;
+    color: #B2DAFF;
+    height: calc(6rem + 9px);
+}
+
+button#zero {
+    width: calc(6rem + 9px);
+}
+
+button#clear,
+button#backspace {
+    background-color: #616161;
+    color: #A5A5A5;
+}
+
 div.operators {
     display: flex;
     justify-content: space-between;
@@ -77,13 +93,19 @@ div.operators > button {
     background-color: #005DB2;
 }
 
-button#equals {
-    background-color: #1991FF;
-    color: #B2DAFF;
+div.num-spec {
+    display: flex;
+    gap: 9px;
 }
 
-button#clear,
-button#backspace {
-    background-color: #616161;
-    color: #A5A5A5;
+div.numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+div.specials {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
 }
