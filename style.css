@@ -31,6 +31,10 @@ div.calculator {
     color: #ffffff;
     border-radius: 20px;
     padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 div.display {
@@ -48,13 +52,6 @@ div.bottomDisplay {
     font-size: 2rem;
 }
 
-div.numbers {
-    width: 160px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
 button {
     border: none;
     outline: none;
@@ -69,4 +66,9 @@ button {
     color: #29A8FF;
 
     text-align: center;
+}
+
+div.operators {
+    display: flex;
+    justify-content: space-between;
 }
