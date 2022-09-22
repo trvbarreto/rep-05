@@ -74,10 +74,9 @@ for (const button of numberBtns) {
 for (const button of operatorBtns) {
     button.addEventListener('click', () => {
         if (firstNumber === undefined) {
-
+            displayNumber = 0;
             firstNumber = displayNumber;
             operator = button.innerText;
-            displayNumber = 0;
 
             topDisplay.innerText = `${firstNumber} ${operator}`;
             bottomDisplay.innerText = '';
