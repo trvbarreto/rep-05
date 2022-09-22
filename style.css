@@ -23,6 +23,11 @@ div.circle {
     height: 800px;
     width: 800px;
     border-radius: 50%;
+
+    /* Circle Glow */
+    -webkit-box-shadow:0px 0px 85px 20px rgba(25,144,255,0.9);
+    -moz-box-shadow: 0px 0px 85px 20px rgba(25,144,255,0.9);
+    box-shadow: 0px 0px 85px 20px rgba(25,144,255,0.9);
 }
 
 div.calculator {
