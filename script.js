@@ -57,8 +57,17 @@ function operate(operator, num1, num2) {
 // Buttons actions
 for (const button of numberBtns) {
     button.addEventListener('click', () => {
-        bottomDisplay.innerText += button.innerText;
-        displayNumber = parseInt(bottomDisplay.innerText);
+        if (button.innerText == '.') {
+            let bottomStr = bottomDisplay.innerText;
+            if (!bottomStr.includes('.')) {
+                bottomDisplay.innerText += button.innerText;
+                displayNumber = parseFloat(bottomDisplay.innerText);
+            }
+        } else {
+            bottomDisplay.innerText += button.innerText;
+            displayNumber = parseFloat(bottomDisplay.innerText);
+        }
+        
     })
 };
 
