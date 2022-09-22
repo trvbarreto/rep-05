@@ -121,18 +121,20 @@ clearButton.addEventListener('click', () => {
 });
 
 backspaceButton.addEventListener('click', () => {
-    let numStr = displayNumber.toString();
+    if (displayNumber !== undefined) {
+        let numStr = displayNumber.toString();
 
-    if (numStr.length === 1) {
-        displayNumber = 0;
-        bottomDisplay.innerText = '';
-    } else {        
-        numStr = numStr.split('');
-        numStr.pop();
-        numStr = numStr.join('');
-        displayNumber = parseFloat(numStr);
-        bottomDisplay.innerText = displayNumber;
-    }         
+        if (numStr.length === 1) {
+            displayNumber = 0;
+            bottomDisplay.innerText = '';
+        } else {        
+            numStr = numStr.split('');
+            numStr.pop();
+            numStr = numStr.join('');
+            displayNumber = parseFloat(numStr);
+            bottomDisplay.innerText = displayNumber;
+        } 
+    }             
 });
 
 /* EXTRA
